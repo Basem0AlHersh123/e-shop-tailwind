@@ -1,0 +1,215 @@
+/* GoUpButton.css - Combined Design */
+
+/* Main Button Styles (Design 1 base) */
+.go-up-btn-combined {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 56px;
+    height: 56px;
+    border: none;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(20px) scale(0.8);
+    animation: pulse 2s infinite;
+    overflow: visible;
+}
+
+/* Visibility States */
+.go-up-btn-combined.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.go-up-btn-combined.hidden {
+    opacity: 0;
+    transform: translateY(20px) scale(0.8);
+    pointer-events: none;
+}
+
+/* Hover Effects (Combined) */
+.go-up-btn-combined:hover {
+    transform: scale(1.1) translateY(-5px);
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.3),
+        0 0 0 4px rgba(102, 126, 234, 0.2);
+    /* Design 2 ring */
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+.go-up-btn-combined:active {
+    transform: scale(0.95);
+}
+
+/* Arrow/Icon (Design 1) */
+.btn-icon {
+    position: relative;
+    z-index: 2;
+    transition: transform 0.3s ease;
+}
+
+.arrow-icon {
+    width: 24px;
+    height: 24px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    transition: transform 0.3s ease;
+}
+
+.go-up-btn-combined:hover .arrow-icon {
+    transform: translateY(-3px);
+}
+
+/* Tooltip (Design 2) */
+.floating-tooltip {
+    position: absolute;
+    bottom: calc(100% + 10px);
+    right: 50%;
+    transform: translateX(50%);
+    background: rgba(31, 41, 55, 0.95);
+    backdrop-filter: blur(10px);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+    z-index: 1001;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    animation: tooltipFadeIn 0.2s ease;
+    pointer-events: none;
+}
+
+.tooltip-arrow {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid rgba(31, 41, 55, 0.95);
+}
+
+@keyframes tooltipFadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(50%) translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(50%) translateY(0);
+    }
+}
+
+/* Progress Indicator (Optional) */
+.progress-indicator {
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    border-top-color: rgba(255, 255, 255, 0.3);
+    animation: spin 2s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.go-up-btn-combined:hover .progress-indicator {
+    opacity: 1;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Pulse Animation (Design 1) */
+@keyframes pulse {
+    0% {
+        box-shadow:
+            0 4px 20px rgba(0, 0, 0, 0.2),
+            0 0 0 0 rgba(102, 126, 234, 0.4);
+    }
+
+    70% {
+        box-shadow:
+            0 4px 20px rgba(0, 0, 0, 0.2),
+            0 0 0 10px rgba(102, 126, 234, 0);
+    }
+
+    100% {
+        box-shadow:
+            0 4px 20px rgba(0, 0, 0, 0.2),
+            0 0 0 0 rgba(102, 126, 234, 0);
+    }
+}
+
+/* Dark Mode Support */
+[data-theme="dark"] .go-up-btn-combined {
+    background: linear-gradient(135deg, #8a2be2 0%, #4b0082 100%);
+    box-shadow:
+        0 4px 20px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .floating-tooltip {
+    background: rgba(17, 24, 39, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .tooltip-arrow {
+    border-top-color: rgba(17, 24, 39, 0.95);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .go-up-btn-combined {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .arrow-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .floating-tooltip {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+}
+
+/* Accessibility */
+.go-up-btn-combined:focus {
+    outline: none;
+    box-shadow:
+        0 0 0 3px rgba(102, 126, 234, 0.4),
+        0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.go-up-btn-combined:focus-visible {
+    outline: 2px solid #667eea;
+    outline-offset: 2px;
+}

@@ -1,0 +1,247 @@
+/* Main Navbar Styles */
+.main-navbar {
+    padding: 0.8rem 0;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    background-color: rgba(var(--bs-body-bg-rgb), 0.9) !important;
+}
+
+/* Logo Styles */
+.brand-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.brand-logo:hover {
+    transform: scale(1.05);
+}
+
+.logo-icon {
+    font-size: 2rem;
+    margin-right: 0.5rem;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.brand-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--bs-primary);
+}
+
+.brand-sub {
+    font-size: 0.8rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    color: var(--bs-secondary);
+}
+
+/* Navigation Links */
+.nav-link-item {
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem !important;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-link-item:hover {
+    background-color: var(--bs-primary);
+    color: white !important;
+    transform: translateY(-2px);
+}
+
+.nav-link-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--bs-primary);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link-item:hover::after {
+    width: 80%;
+}
+
+/* Dropdown Styles */
+.nav-dropdown .dropdown-toggle {
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+}
+
+.nav-dropdown .dropdown-menu {
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    margin-top: 10px;
+    padding: 0.5rem;
+    animation: fadeIn 0.3s ease;
+}
+
+.dropdown-item {
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    margin: 0.1rem 0;
+    transition: all 0.2s ease;
+}
+
+.dropdown-item:hover {
+    background-color: var(--bs-primary);
+    color: white;
+    transform: translateX(5px);
+}
+
+/* Search Bar */
+.search-form {
+    flex: 1;
+    max-width: 500px;
+}
+
+.search-input {
+    border-radius: 25px 0 0 25px;
+    border: 1px solid var(--bs-border-color);
+    padding: 0.75rem 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    box-shadow: 0 0 0 3px rgba(var(--bs-primary-rgb), 0.25);
+    border-color: var(--bs-primary);
+}
+
+.search-btn {
+    border-radius: 0 25px 25px 0;
+    padding: 0.75rem 1.5rem;
+}
+
+/* Badges */
+.cart-badge,
+.notification-badge,
+.wishlist-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    font-size: 0.7rem;
+    padding: 0.25rem 0.4rem;
+    animation: pulse 2s infinite;
+}
+
+.cart-btn {
+    position: relative;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    background-color: rgba(var(--bs-primary-rgb), 0.1);
+    transition: all 0.3s ease;
+}
+
+.cart-btn:hover {
+    background-color: var(--bs-primary);
+    color: white !important;
+}
+
+/* User Dropdown */
+.user-dropdown .dropdown-toggle {
+    padding: 0;
+    border: none;
+    background: transparent;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--bs-primary), var(--bs-info));
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.user-avatar:hover {
+    transform: scale(1.1);
+}
+
+/* Theme-specific styles */
+.dark .main-navbar {
+    background-color: rgba(33, 37, 41, 0.95) !important;
+}
+
+.light .main-navbar {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* RTL Support
+[dir="rtl"] .search-input {
+    border-radius: 0 25px 25px 0;
+}
+
+[dir="rtl"] .search-btn {
+    border-radius: 25px 0 0 25px;
+}
+
+[dir="rtl"] .dropdown-item:hover {
+    transform: translateX(-5px);
+} */
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .main-navbar {
+        padding: 0.5rem 0;
+    }
+
+    .nav-link-item {
+        margin: 0.2rem 0;
+        border-radius: 0;
+        border-left: 3px solid transparent;
+    }
+
+    .nav-link-item:hover {
+        border-left-color: var(--bs-primary);
+        transform: none;
+    }
+
+    .search-form {
+        max-width: 100%;
+    }
+}

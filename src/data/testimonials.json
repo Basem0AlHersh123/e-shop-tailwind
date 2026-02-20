@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Sarah L.",
+    "location": "New York, NY",
+    "rating": 5,
+    "quote": "E-Shop completely exceeded my expectations! The product quality is fantastic, and the shipping was incredibly fast. I found exactly what I needed.",
+    "avatarUrl": "/images/testimonials/sarah.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Mark D.",
+    "location": "London, UK",
+    "rating": 5,
+    "quote": "The best online shopping experience I've had in years. The interface is clean, the prices are competitive, and the customer support was top-notch.",
+    "avatarUrl": "/images/testimonials/mark.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Javier R.",
+    "location": "Madrid, ES",
+    "rating": 4,
+    "quote": "Great selection of electronics. The checkout process was smooth. I wish there were more details in the product descriptions, but overall very happy.",
+    "avatarUrl": "/images/testimonials/javier.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Emily K.",
+    "location": "Sydney, AU",
+    "rating": 5,
+    "quote": "Finally found a reliable store for my niche jewelry needs. The items match the photos perfectly. Highly recommend to everyone!",
+    "avatarUrl": "/images/testimonials/emily.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Chris B.",
+    "location": "Toronto, CA",
+    "rating": 5,
+    "quote": "Incredible value for the price. The item arrived securely packaged and works exactly as advertised. A seamless transaction from start to finish.",
+    "avatarUrl": "/images/testimonials/chris.jpg"
+  }
+]

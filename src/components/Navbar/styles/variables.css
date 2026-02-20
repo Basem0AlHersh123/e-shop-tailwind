@@ -1,0 +1,67 @@
+/* src/components/Navbar/styles/variables.css */
+:root {
+    /* Light Theme - Modern & Clean */
+    --color-light-bg: #ffffff;
+    --color-light-surface: #f8fafc;
+    --color-light-border: #e2e8f0;
+    --color-light-text: #1e293b;
+    --color-light-text-secondary: #64748b;
+
+    /* Dark Theme - Sophisticated */
+    --color-dark-bg: #0f172a;
+    --color-dark-surface: #1e293b;
+    --color-dark-border: #334155;
+    --color-dark-text: #f1f5f9;
+    --color-dark-text-secondary: #cbd5e1;
+
+    /* Accent Colors */
+    --color-primary: #3b82f6;
+    --color-primary-light: #60a5fa;
+    --color-primary-dark: #2563eb;
+
+    --color-secondary: #8b5cf6;
+    --color-success: #10b981;
+    --color-warning: #f59e0b;
+    --color-danger: #ef4444;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    --gradient-dark: linear-gradient(135deg, #1e293b, #0f172a);
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+
+    /* Animation */
+    --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Border Radius */
+    --radius-sm: 0.375rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 0.75rem;
+    --radius-xl: 1rem;
+    --radius-full: 9999px;
+}
+
+/* Dark Theme Variables */
+[data-theme="dark"] {
+    --color-bg: var(--color-dark-bg);
+    --color-surface: var(--color-dark-surface);
+    --color-border: var(--color-dark-border);
+    --color-text: var(--color-dark-text);
+    --color-text-secondary: var(--color-dark-text-secondary);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.3);
+}
+
+/* Light Theme Variables */
+[data-theme="light"] {
+    --color-bg: var(--color-light-bg);
+    --color-surface: var(--color-light-surface);
+    --color-border: var(--color-light-border);
+    --color-text: var(--color-light-text);
+    --color-text-secondary: var(--color-light-text-secondary);
+}
